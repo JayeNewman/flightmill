@@ -1,4 +1,4 @@
-#' @name fm_series_plot
+#' @name fm_ch_plot
 #' @title Time series plots
 #' @description Plots for the time series data for a chamber in the flight mill
 #' @note TO DO modify this to loop through several of the flight mill chambers
@@ -7,7 +7,7 @@
 #' @return A plot of the time series data for a single flight mill chamber
 #' @export
 
-fm_series_plot <- function(df, title) {
+fm_ch_plot <- function(df, title) {
   p <- ggplot2::ggplot(df, aes(x=elapsed_sec, y=speedCMS)) +
     geom_line(color = "grey40") +
     #   geom_smooth(method ,color = "orange") +
