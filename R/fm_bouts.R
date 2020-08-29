@@ -16,6 +16,7 @@ fm_bouts <- function(df, min_acceptable_duration) {
     unlist()
 
   df <- df %>%
+    dplyr::select(chamber, species, time_series, id) %>%
     dplyr::mutate(bout_group = group_column) %>%
     dplyr::group_by(bout_group) %>%
     dplyr::summarise(start = min(elapsed_sec),
