@@ -30,8 +30,7 @@ fm_bout_summary <- function(df, ch_data, fm_total_duration){
                     total_mean_speed_cms = mean_speed$mean_cms_true_bouts,
                     distance_km = max(ch_data$distance_cm/100000),
                     num_bouts = sum(df$bout == "TRUE"),
-                    flight_duration_sec = flight_duration$total_flight_duration_sec,
-                    rest_duration = fm_total_duration - flight_duration) %>%
+                    flight_duration_sec = flight_duration$total_flight_duration_sec)
       dplyr::group_by(bout) %>%
       base::subset(!bout %in% unique(bout[bout == FALSE])) %>%
       dplyr::mutate(run = first(ch_data$run),
