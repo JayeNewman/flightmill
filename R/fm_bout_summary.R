@@ -9,7 +9,7 @@
 #' @return A data frame with the bout flight parameters for the specified flight mill chamber
 #' @export
 
-fm_bout_summary <- function(df, ch_data, fm_total_duration){
+fm_bout_summary <- function(df, ch_data, bout, fm_total_duration){
   # summarising the mean total speed
     mean_speed <- df %>%
       dplyr::group_by(bout) %>%
