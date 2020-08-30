@@ -5,6 +5,7 @@
 #' @description Summarises the mean true flight speed and the flight duration for each bout for the individual chamber
 #' @param df Data frame to be modified. Use the data frame created from bouts function
 #' @param ch_data The data frame for the individual chamber within the flight mill
+#' @param bout the vector bout created from the fm_bouts function
 #' @param fm_total_duration The total duration that the flight mill ran for. This is used to calculate the rest duration by taking away from the flight duration that is calculated
 #' @return A data frame with the bout flight parameters for the specified flight mill chamber
 #' @export
