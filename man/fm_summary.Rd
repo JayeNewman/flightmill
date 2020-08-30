@@ -4,7 +4,7 @@
 \alias{fm_summary}
 \title{Summary of the flight mill data}
 \usage{
-fm_summary(df, bout_summary_data, bout, mean_speed_bout)
+fm_summary(bout_data, ch_data, ch_dr, ch_mean_speed, fm_total_duration)
 }
 \arguments{
 \item{df}{Data frame to be modified. Use the data frame created from bouts and rest_dration functions.}
@@ -13,7 +13,7 @@ fm_summary(df, bout_summary_data, bout, mean_speed_bout)
 
 \item{bout}{Vector created from the bouts function.}
 
-\item{mean_speed_bout}{Vector created from the bout data frame}
+\item{mean_speed_bout}{Vector created from the fm_speed data frame}
 }
 \value{
 A data frame with the bout flight parameters for the specified flight mill chamber

@@ -15,15 +15,15 @@ fm_params(
 )
 }
 \arguments{
-\item{df}{Data frame to be modified}
+\item{df}{Data frame to be modified.}
 
-\item{chamber}{Parameter to be grouped for analysis}
+\item{chamber}{Parameter to be grouped for analysis.}
 
-\item{elapsed_sec}{Vector of the elapsed seconds parameter}
+\item{elapsed_sec}{Vector of the elapsed seconds parameter.}
 
-\item{counter}{Vector of the count parameter}
+\item{counter}{Vector of the count parameter.}
 
-\item{lowest_speed}{Lowest acceptable speed for a bout to become FALSE}
+\item{lowest_speed}{Lowest acceptable speed for a bout to become FALSE.}
 
 \item{min_time_interval}{Shortest time interval allowable between infrared breaks. This is to omit unrealistic speeds. The usual acceptable level is 0.01}
 
