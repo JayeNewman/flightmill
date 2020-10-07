@@ -14,7 +14,7 @@
 
 # An example lookup table:
 #
-# dir_run <- ("/data/20091703")
+# file_dir <- ("/data/20091703")
 #
 # chamber <- c("CHAMBER1", "CHAMBER2", "CHAMBER3", "CHAMBER4",
 #              "CHAMBER5", "CHAMBER6", "CHAMBER7", "CHAMBER8")
@@ -24,7 +24,7 @@
 
 fm_input <- function(file_dir, file_name, sp_name) {
 
-  csv_files <- fs::dir_ls(paste0(getwd(),dir_run))
+  csv_files <- fs::dir_ls(paste0(getwd(),file_dir))
 
   csv_files <- csv_files %>%
     purrr::map_dfr(read_csv, skip = 1, .id = "chamber")
