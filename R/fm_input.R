@@ -29,8 +29,8 @@ fm_input <- function(file_dir, file_name, sp_name) {
   csv_files <- csv_files %>%
     purrr::map_dfr(read_csv, skip = 1, .id = "chamber")
 
-  txt_row <- utils::read.csv(file_name, header = FALSE, nrows = 1) %>%
-    stringr::str_trunc(width = 20, side = 'left', ellipsis = '')
+  txt_row <- utils::read.csv(paste0(getwd(),file_dir,"/",file_name, header = FALSE, nrows = 1) %>%
+    stringr::str_trunc(width = 20, side = 'left', ellipsis = ''))
 
   csv_files <- csv_files %>%
     purrr::map_dfr(read_csv, skip = 1, .id = "chamber")
