@@ -1,4 +1,4 @@
-# Calculates speedCMS, speed_kmph, distance_cm, distance_m, and flight bouts
+# Calculates speed_cms, speed_kmph, distance_cm, distance_m, and flight bouts
 #' @name fm_params
 #' @title Calculate flight mill parameters
 #' @description Loads multiple files from a single directory. The files are expected to have a first cell that has the flight mill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and chamber for the eight chambers id is required.
@@ -24,11 +24,11 @@ fm_params <- function(df, chamber, elapsed_sec, counter, sector_distance, lowest
     dplyr::mutate(time_interval = elapsed_sec - lag(elapsed_sec, default = elapsed_sec[1]),
                   speed_cms = radius_at_break / time_interval,
                   speed_cms = replace(speed_cms, which(speed_cms < 0), 0),
-                  speed_kmph = speedCMS * 0.036,
+                  speed_kmph = speed_cms * 0.036,
                   speed_kmph = replace(speed_kmph, which(speed_kmph < 0), 0),
                   distance_cm = cumsum(radius_at_break),
                   distance_m = distance_cm * 0.01,
-                  bout = case_when(speedCMS < lowest_speed ~FALSE, speedCMS >= lowest_speed ~TRUE, TRUE ~NA)) %>%
+                  bout = case_when(speed_cms < lowest_speed ~FALSE, speed_cms >= lowest_speed ~TRUE, TRUE ~NA)) %>%
     dplyr::filter(!duplicated(elapsed_sec),
                   time_interval > min_time_interval,
                   elapsed_sec < fm_duration)
