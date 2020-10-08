@@ -29,12 +29,9 @@ fm_input <- function(file_dir, file_name, sp_name) {
   csv_files <- csv_files %>%
     purrr::map_dfr(read_csv, skip = 1, .id = "chamber")
 
- file_path <-  paste0(getwd(),file_dir,"/",file_name)
- print(file_path)
+  file_path <-  paste0(getwd(),file_dir,"/",file_name)
 
   txt_row <- utils::read.csv(file = file_path, header = FALSE, nrows = 1)
-  # %>%
-  #   stringr::str_trunc(width = 20, side = 'left', ellipsis = '')
 
   df <- csv_files %>%
     dplyr::mutate_at("chamber", str_trunc, width = 21, side = 'left', ellipsis = '') %>%
@@ -52,7 +49,6 @@ fm_input <- function(file_dir, file_name, sp_name) {
   df <- cbind(df, id = rep(NA, n))
 
   #id_lookup dataframe with two columns: id and chamber which contains the unique pairings
-
 
   for(i in 1:nrow(id_lookup))
   {
