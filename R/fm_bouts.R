@@ -22,7 +22,7 @@ fm_bouts <- function(df, min_acceptable_duration) {
                      end = max(elapsed_sec),
                      bout_rest_distance_cm = sum(radius_at_break),
                      bout = first(bout),
-                     mean_speed_bout_cms = mean(speedCMS)) %>%
+                     mean_speed_bout_cms = mean(speed_cms)) %>%
     dplyr::mutate(duration = end - start) %>%
     dplyr::filter(!duration < min_acceptable_duration)
 }

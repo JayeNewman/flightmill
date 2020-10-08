@@ -10,7 +10,7 @@
 
 fm_summary <- function(bout_data, ch_data, ch_dr, ch_mean_speed, fm_total_duration) {
   bout_data <- bout_data %>%
-    dplyr::mutate(max_speed_cms = max(ch_data$speedCMS),
+    dplyr::mutate(max_speed_cms = max(ch_data$speed_cms),
            total_mean_speed_cms = ch_mean_speed$mean_cms_true_bouts,
            distance_km = max(ch_data$distance_cm/100000),
            num_bouts = sum(bout_data$bout == "TRUE"),

@@ -8,7 +8,7 @@
 #' @export
 
 fm_ch_plot <- function(df, title) {
-  p <- ggplot2::ggplot(df, aes(x=elapsed_sec, y=speedCMS)) +
+  p <- ggplot2::ggplot(df, aes(x=elapsed_sec, y=speed_cms)) +
     geom_line(color = "grey40") +
     #   geom_smooth(method ,color = "orange") +
     xlab("seconds") +

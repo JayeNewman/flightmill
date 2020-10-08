@@ -15,8 +15,8 @@ fm_bout_summary <- function(df, ch_data, bout, fm_total_duration){
     mean_speed <- df %>%
       dplyr::mutate_if(is.character, as.factor) %>%
       dplyr::group_by(bout) %>%
-      dplyr::summarise(ttl_mean_bout_speedcms = mean(mean_speed_bout_cms)) %>%
-      tidyr::spread(bout, ttl_mean_bout_speedcms) %>%
+      dplyr::summarise(ttl_mean_bout_speed_cms = mean(mean_speed_bout_cms)) %>%
+      tidyr::spread(bout, ttl_mean_bout_speed_cms) %>%
       dplyr::rename(mean_cms_true_bouts = "TRUE")
 
   # calculating duration of actual flight
@@ -29,7 +29,7 @@ fm_bout_summary <- function(df, ch_data, bout, fm_total_duration){
 
     # combining the data to make a proper bout summary data frame
     bout_summary <- df %>%
-      dplyr::mutate(max_speed_cms = max(ch_data$speedCMS),
+      dplyr::mutate(max_speed_cms = max(ch_data$speed_cms),
                     total_mean_speed_cms = mean_speed$mean_cms_true_bouts,
                     distance_km = max(ch_data$distance_cm/100000),
                     num_bouts = sum(df$bout == "TRUE"),
