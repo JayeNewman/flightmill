@@ -27,22 +27,22 @@ fm_input <- function(file_dir, file_name, sp_name) {
   csv_files <- fs::dir_ls(paste0(getwd(),file_dir))
 
   csv_files <- csv_files %>%
-    purrr::map_dfr(read_csv, skip = 1, .id = "mill")
+    purrr::map_dfr(read_csv, skip = 1, .id = "chamber")
 
   file_path <-  paste0(getwd(),file_dir,"/",file_name)
 
   txt_row <- utils::read.csv(file = file_path, header = FALSE, nrows = 1)
 
   df <- csv_files %>%
-    dplyr::mutate_at("mill", str_trunc, width = 21, side = 'left', ellipsis = '') %>%
-    tidyr::separate("mill", c('run', 'mill', '/')) %>%
+    dplyr::mutate_at("chamber", str_trunc, width = 21, side = 'left', ellipsis = '') %>%
+    tidyr::separate("chamber", c('run', 'chamber', '/')) %>%
     dplyr::select(-"/") %>%
     janitor::clean_names("snake") %>%
     dplyr::mutate(starting_time = rep(dmy_hms(txt_row)),
                   time_series = starting_time + elapsed_sec,
                   species = sp_name)
 
-  id_lookup <- data.frame(mill, id, stringsAsFactors = FALSE)
+  id_lookup <- data.frame(chamber, id, stringsAsFactors = FALSE)
 
   n <- nrow(df)
 
@@ -52,7 +52,7 @@ fm_input <- function(file_dir, file_name, sp_name) {
 
   for(i in 1:nrow(id_lookup))
   {
-    rowInds <- which(df[, "mill"] == id_lookup[i, "mill"])
+    rowInds <- which(df[, "chamber"] == id_lookup[i, "chamber"])
     if(length(rowInds) == 0)
     {
       #stop("One of the mills in the lookup does not have any corresponding rows in the dataframe.")
