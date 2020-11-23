@@ -1,10 +1,10 @@
 #' @name fm_ch_plot
 #' @title Time series plots
-#' @description Plots for the time series data for a chamber in the flight mill
-#' @note TO DO modify this to loop through several of the flight mill chambers
+#' @description Plots for the time series data for each mill in the flight mill
+#' @note TO DO modify this to loop through several of the flight mills
 #' @param df data frame input
 #' @param title Name of the title of the plot
-#' @return A plot of the time series data for a single flight mill chamber
+#' @return A plot of the time series data for a single flight mill
 #' @export
 
 fm_ch_plot <- function(df, title) {

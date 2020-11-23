@@ -1,11 +1,11 @@
 #' @name fm_summary
 #' @title Summary of the flight mill data
-#' @description Summarises the chamber data
+#' @description Summarises the mill data
 #' @param df Data frame to be modified. Use the data frame created from bouts and rest_dration functions.
 #' @param bout_summary_data Data frame of the bouts function.
 #' @param bout Vector created from the bouts function.
 #' @param mean_speed_bout Vector created from the fm_speed data frame
-#' @return A data frame with the bout flight parameters for the specified flight mill chamber
+#' @return A data frame with the bout flight parameters for the specified flight mill
 #' @export
 
 fm_summary <- function(bout_data, ch_data, ch_dr, ch_mean_speed, fm_total_duration) {
@@ -19,7 +19,7 @@ fm_summary <- function(bout_data, ch_data, ch_dr, ch_mean_speed, fm_total_durati
     dplyr::group_by(bout) %>%
     base::subset(!bout %in% unique(bout[bout == FALSE])) %>%
     dplyr::mutate(run = first(ch_data$run),
-           chamber = first(ch_data$chamber),
+           mill = first(ch_data$mill),
            id = first(ch_data$id),
            species = first(ch_data$species))
   return(bout_data)
