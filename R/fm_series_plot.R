@@ -1,6 +1,6 @@
 #' @name fm_ch_plot
 #' @title Time series plots
-#' @description Plots for the time series data for each mill in the flight mill
+#' @description Plots for the time series data for each chamber in the flight mill
 #' @note TO DO modify this to loop through several of the flight mills
 #' @param df data frame input
 #' @param title Name of the title of the plot

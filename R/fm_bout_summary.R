@@ -2,9 +2,9 @@
 
 #' @name fm_bout_summary
 #' @title Calculate mean true speed and flight duration for each bout
-#' @description Summarises the mean true flight speed and the flight duration for each bout for the individual mill
+#' @description Summarises the mean true flight speed and the flight duration for each bout for the individual chamber
 #' @param df Data frame to be modified. Use the data frame created from bouts function
-#' @param ch_data The data frame for the individual mill within the flight mill
+#' @param ch_data The data frame for the individual chamber within the flight mill
 #' @param bout the vector bout created from the fm_bouts function
 #' @param fm_total_duration The total duration that the flight mill ran for. This is used to calculate the rest duration by taking away from the flight duration that is calculated
 #' @return A data frame with the bout flight parameters for the specified flight mill
@@ -37,7 +37,7 @@ fm_bout_summary <- function(df, ch_data, bout, fm_total_duration){
       dplyr::group_by(bout) %>%
       base::subset(!bout %in% unique(bout[bout == FALSE])) %>%
       dplyr::mutate(run = first(ch_data$run),
-                    mill = first(ch_data$mill),
+                    chamber = first(ch_data$chamber),
                     id = first(ch_data$id),
                     species = first(ch_data$species))
     return(bout_summary)
