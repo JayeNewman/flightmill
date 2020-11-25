@@ -61,5 +61,8 @@ fm_input <- function(file_dir, file_name, sp_name) {
     df[rowInds, "id"] <- id_lookup[i, "id"]
   }
 
+  df <- df %>%
+    rename_with(mill = chamber)
+
   return(df)
 }
