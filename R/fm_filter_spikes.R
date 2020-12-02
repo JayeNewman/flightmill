@@ -14,11 +14,11 @@ fm_filter_spikes <- function(x, madThreshold = 4)
   spikes <- rep(0, length(diffX))
   for(i in 1:(length(diffX) - 1))
   {
-    if(diffX[i] > madThreshold & -1*diffX[i + 1] > madThreshold)
+    if(diffX[i] > madThreshold) # & -1*diffX[i + 1] > madThreshold)  # this calculates when it has a double spike, just before and just after
     {
       spikes[i] <- 1
     }
-    if(-1*diffX[i] > madThreshold & diffX[i + 1] > madThreshold)
+    if(-1*diffX[i] > madThreshold) # & diffX[i + 1] > madThreshold)
     {
       spikes[i] <- 1
     }
