@@ -12,13 +12,11 @@
 
 ## Creating a function for calculating all of the flight parameters ----
 
-fm_ch_summary <- function(df, ch_name, minimum_bout, fm_duration)
+fm_split_combine <- function(ch_name, minimum_bout, fm_duration)
 {
-
-  ch_bouts <- flightmill::fm_bouts(ch_name, minimum_bout)
-  ch_dr <- flightmill::fm_duration_rest(ch_bouts)
-  ch_mean_speed <- flightmill::fm_speed(ch_bouts)
-  ch_summary <- flightmill::fm_summary(ch_bouts, ch_name, ch_dr, ch_mean_speed, fm_duration)
-
+  ch_bouts <- fm_bouts(ch_name, minimum_bout)
+  ch_dr <- fm_duration_rest(ch_bouts)
+  ch_mean_speed <- fm_speed(ch_bouts)
+  ch_summary <- fm_summary(ch_bouts, ch_name, ch_dr, ch_mean_speed, fm_duration)
   return(ch_summary)
 }
