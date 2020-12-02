@@ -12,7 +12,7 @@
 
 ## Creating a function for calculating all of the flight parameters ----
 
-fm_ch_summary <- function(df,  minimum_bout, fm_duration)
+fm_ch_summary <- function(df, ch_name, minimum_bout, fm_duration)
 {
 
   ch_bouts <- flightmill::fm_bouts(ch_name, minimum_bout)
