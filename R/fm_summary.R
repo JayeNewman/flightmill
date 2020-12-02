@@ -1,7 +1,7 @@
 #' @name fm_summary
 #' @title Summary of the flight mill data
 #' @description Summarises the mill data
-#' @param df Data frame to be modified. Use the data frame created from bouts and rest_dration functions.
+#' @param df Data frame to be modified. Use the data frame created from bouts and rest_duration functions.
 #' @param bout_summary_data Data frame of the bouts function.
 #' @param bout Vector created from the bouts function.
 #' @param mean_speed_bout Vector created from the fm_speed data frame
@@ -24,3 +24,4 @@ fm_summary <- function(bout_data, ch_data, ch_dr, ch_mean_speed, fm_total_durati
            species = first(ch_data$species))
   return(bout_data)
 }
+
