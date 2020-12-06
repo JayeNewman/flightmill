@@ -12,7 +12,7 @@ fm_summary <- function(bout_data, ch_data, ch_dr, ch_mean_speed, fm_total_durati
   bout_data <- bout_data %>%
     dplyr::mutate(max_speed_cms = max(ch_data$speed_cms),
            total_mean_speed_cms = ch_mean_speed$mean_cms_true_bouts,
-           median_speed_cms = ch_mean_speed$median_speed_cms,
+           total_median_speed_cms = ch_mean_speed$median_cms_true_bouts,
            distance_km = max(ch_data$distance_cm/100000),
            num_bouts = sum(bout_data$bout == "TRUE"),
            flight_duration = ch_dr$total_flight_duration_sec,
