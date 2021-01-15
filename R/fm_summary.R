@@ -20,9 +20,10 @@ fm_summary <- function(bout_data, ch_data, ch_dr, ch_mean_speed, fm_total_durati
     dplyr::group_by(bout) %>%
     base::subset(!bout %in% unique(bout[bout == FALSE])) %>%
     dplyr::mutate(run = first(ch_data$run),
-           chamber = first(ch_data$chamber),
-           id = first(ch_data$id),
-           species = first(ch_data$species))
+                  starting_time = first(ch_data$starting_time),
+                  chamber = first(ch_data$chamber),
+                  id = first(ch_data$id),
+                  species = first(ch_data$species))
   return(bout_data)
 }
 
