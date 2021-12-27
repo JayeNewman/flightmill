@@ -3,17 +3,17 @@
 \name{fm_mean_speed}
 \alias{fm_mean_speed}
 \alias{fm_speed}
-\title{Mean speed of the flight mill chamber run}
+\title{Mean speed of the flight mill run}
 \usage{
 fm_speed(df, bout)
 }
 \arguments{
 \item{df}{Data frame to be modified}
 
-\item{bout}{Uses the vector bout that was created in the bouts function}
+\item{bout}{Uses the vector bout that was created in the flight bouts function}
 }
 \value{
-A data frame with flight parameters calculated for each bout.
+A data frame with flight parameters calculated for each flight bout.
 }
 \description{
 Calculates the mean bout speed for each bout

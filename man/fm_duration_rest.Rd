@@ -2,7 +2,7 @@
 % Please edit documentation in R/fm_duration_rest.R
 \name{fm_duration_rest}
 \alias{fm_duration_rest}
-\title{Calculate the duration and rest for bouts}
+\title{Calculate the duration and rest for flight bouts}
 \usage{
 fm_duration_rest(df, bout)
 }
@@ -12,8 +12,8 @@ fm_duration_rest(df, bout)
 \item{bout}{The bout vector created from the bouts function.}
 }
 \value{
-A data frame with the bout flight parameters for the specified flight mill chamber
+A data frame with the bout flight parameters for the specified flight mill
 }
 \description{
-Calculates the rest and duration for each bout in a flight mill chamber
+Calculates the rest and flight duration for each bout in a flight mill
 }

@@ -2,13 +2,14 @@
 % Please edit documentation in R/fm_params.R
 \name{fm_params}
 \alias{fm_params}
-\title{Calculate flight mill parameters}
+\title{Calculate flight flightmill parameters}
 \usage{
 fm_params(
   df,
-  chamber,
+  flightmill,
   elapsed_sec,
   counter,
+  sector_distance,
   lowest_speed,
   min_time_interval,
   fm_duration
@@ -17,21 +18,23 @@ fm_params(
 \arguments{
 \item{df}{Data frame to be modified.}
 
-\item{chamber}{Parameter to be grouped for analysis.}
+\item{flightmill}{Parameter to be grouped for analysis.}
 
 \item{elapsed_sec}{Vector of the elapsed seconds parameter.}
 
 \item{counter}{Vector of the count parameter.}
 
+\item{sector_distance}{The part of the circumference that the insect has traveled between each sensor break.}
+
 \item{lowest_speed}{Lowest acceptable speed for a bout to become FALSE.}
 
 \item{min_time_interval}{Shortest time interval allowable between infrared breaks. This is to omit unrealistic speeds. The usual acceptable level is 0.01}
 
-\item{fm_duration}{The length of time in seconds of the flight mill run}
+\item{fm_duration}{The length of time in seconds of the flightmill run}
 }
 \value{
-A data frame with flight parameters calculated from elapsed seconds and count grouped by the chambers of the flight mill.
+A data frame with flight parameters calculated from elapsed seconds and count grouped by each flight mill
 }
 \description{
-Loads multiple files from a single directory. The files are expected to have a first cell that has the flight mill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and chamber for the eight chambers id is required.
+Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flightmill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
 }

@@ -1,0 +1,24 @@
+---
+title: "flightmill_vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{flightmill_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+**Introduction**
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(flightmill)
+
+```

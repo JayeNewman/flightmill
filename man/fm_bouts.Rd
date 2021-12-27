@@ -9,14 +9,14 @@ fm_bouts(df, min_acceptable_duration)
 \arguments{
 \item{df}{data frame input}
 
-\item{min_acceptable_duration}{The minimum acceptable duration of a stop to be considered a bout = FALSE.    Duration of flight must be more than 2.5 seconds of sustained flight}
+\item{min_acceptable_duration}{The minimum acceptable duration of a stop to be considered a bout = FALSE. Duration of flight must be more than 2.5 seconds of sustained flight}
 }
 \value{
 A data frame with flight bout parameters calculated
 }
 \description{
-The number of bouts is calculated for each flight mill chamber.
+The number of bouts is calculated for each flightmill.
 }
 \note{
-TO DO modify this to loop through several of the flight mill chambers
+TO DO modify this to loop through several of the flightmills
 }

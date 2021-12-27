@@ -4,18 +4,20 @@
 \alias{fm_bout_summary}
 \title{Calculate mean true speed and flight duration for each bout}
 \usage{
-fm_bout_summary(df, ch_data, fm_total_duration)
+fm_bout_summary(df, fm_data, bout, fm_total_duration)
 }
 \arguments{
 \item{df}{Data frame to be modified. Use the data frame created from bouts function}
 
-\item{ch_data}{The data frame for the individual chamber within the flight mill}
+\item{fm_data}{The data frame for the individual flightmill}
+
+\item{bout}{the vector bout created from the fm_bouts function}
 
 \item{fm_total_duration}{The total duration that the flight mill ran for. This is used to calculate the rest duration by taking away from the flight duration that is calculated}
 }
 \value{
-A data frame with the bout flight parameters for the specified flight mill chamber
+A data frame with the bout flight parameters for the specified flight mill
 }
 \description{
-Summarises the mean true flight speed and the flight duration for each bout for the individual chamber
+Summarises the mean true flight speed and the flight duration for each bout for the individual flightmill
 }

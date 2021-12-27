@@ -16,8 +16,8 @@ fm_short_summary(df, bout_summary_data, duration_rest_data)
 \item{mean_speed_bout}{Vector created from the bout data frame}
 }
 \value{
-A data frame with the bout flight parameters for the specified flight mill chamber
+A data frame with the bout flight parameters for the specified flight mill
 }
 \description{
-Summarises the chamber data in a much shorter way
+Summarises the mill data in a much shorter way
 }

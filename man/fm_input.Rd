@@ -4,22 +4,20 @@
 \alias{fm_input}
 \title{Importing multiple files for a flight mill run}
 \usage{
-fm_input(file_dir, file_name, sp_name, id1, id2, id3, id4, id5, id6, id7, id8)
+fm_input(file_dir, file_name, sp_name)
 }
 \arguments{
-\item{file_dir}{locates the specified directory}
+\item{file_dir}{locates the specified directory.}
 
-\item{file_name}{choose a file in the directory that has the run values on the first line}
+\item{file_name}{choose a file in the directory that has the run values on the first line.}
 
-\item{sp_name}{the name of the species used in the mill. Expects only one species}
-
-\item{id1, }{id2, to 1d8, is the chamber code id's of the insect that were flown for each chamber}
+\item{sp_name}{the name of the species used in the flightmill. Expects only one species.}
 }
 \value{
-A data frame of all the files within the directory. They will be combined
+A combined data frame of all the files within the directory.
 }
 \description{
-Loads multiple files from a single directory. The files are expected to have a first cell that has the flight mill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and chamber for the eight chambers id is required.
+Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flightmill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
 }
 \details{
 Import multiple files
