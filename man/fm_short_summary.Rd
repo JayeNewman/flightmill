@@ -12,8 +12,6 @@ fm_short_summary(df, bout_summary_data, duration_rest_data)
 \item{bout_summary_data}{Data frame of the bouts function.}
 
 \item{duration_rest_data}{Vector created from the rest_duration function.}
-
-\item{mean_speed_bout}{Vector created from the bout data frame}
 }
 \value{
 A data frame with the bout flight parameters for the specified flight mill

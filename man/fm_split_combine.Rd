@@ -12,8 +12,6 @@ fm_split_combine(fm_name, minimum_bout, fm_duration)
 \item{minimum_bout}{The allowable time considered to be a bout for the species}
 
 \item{fm_duration}{Length of time that the flight mill ran for}
-
-\item{df}{Data frame to be used for calculating the flight parameters.}
 }
 \value{
 A data frame with the flight parameters for the specified flight mill and another data frame with the time series data

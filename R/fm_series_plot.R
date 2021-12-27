@@ -1,7 +1,7 @@
 #' @name fm_series_plot
 #' @title Time series plots
 #' @description Plots for the time series data for each flightmill
-# @note TO DO modify this to loop through several of the flightmills
+#' @note TO DO modify this to loop through several of the flightmills
 #' @param df data frame input
 #' @param title Name of the title of the plot
 #' @return A plot of the time series data for a single flightmill

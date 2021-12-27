@@ -17,3 +17,6 @@ A plot of the time series data for a single flightmill
 \description{
 Plots for the time series data for each flightmill
 }
+\note{
+TO DO modify this to loop through several of the flightmills
+}

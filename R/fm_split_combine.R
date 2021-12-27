@@ -2,7 +2,6 @@
 #' @title Flight parameters in each mill and combine as two datasets
 #' @description Calculate all the flight parameters separately and then combine them as two complete datasets, a summary and a time series dataset. This combines the functions of
 #' fm_bouts, fm_dr, fm_speed, fm_summary
-#' @param df Data frame to be used for calculating the flight parameters.
 #' @param fm_name the flightmill name of the mill
 #' @param minimum_bout The allowable time considered to be a bout for the species
 #' @param fm_duration Length of time that the flight mill ran for

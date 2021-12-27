@@ -1,10 +1,11 @@
 #' @name fm_summary
 #' @title Summary of the flight mill data
 #' @description Summarises the mill data
-#' @param df Data frame to be modified. Use the data frame created from bouts and rest_duration functions.
-#' @param bout_summary_data Data frame of the bouts function.
-#' @param bout Vector created from the bouts function.
-#' @param mean_speed_bout Vector created from the fm_speed data frame
+#' @param bout_data Data frame to be modified. Use the data frame created from bouts and rest_duration functions.
+#' @param fm_data Flight mill data to be incorporated.
+#' @param fm_dr Duration data to be included in the summary.
+#' @param fm_mean_speed Vector created from the fm_speed data frame.
+#' @param fm_total_duration The duration data to be included in the summary.
 #' @return A data frame with the bout flight parameters for the specified flight mill
 #' @export
 
