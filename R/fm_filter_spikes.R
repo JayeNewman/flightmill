@@ -1,9 +1,9 @@
 #' @name fm_filter_spikes
-#' @title Identify anomolies in the flight mill dataset
-#' @description Identifies anomolies in the flight mill dataset by using a madThreshold and creates a column that is either a 1: it is a spike and 0: is not a spike
-#' @param x the data frame from which to identify the anomolies
-#' @param madThreshold
-#' @return A data frame with summary data and another dataframe with the complete time series data
+#' @title Identify anomalies in the flight mill data set
+#' @description Identifies anomalies in the flight mill data set by using the median absolute deviation of the flight speed and creates a column that is either a 1: it is a spike and 0: is not a spike
+#' @param x Data frame
+#' @param madThreshold Computes the median absolute deviation using a numeric vector threshold
+#' @return A data frame with summary data and another data frame with the complete time series data
 #' @export
 #'
 

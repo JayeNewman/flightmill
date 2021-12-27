@@ -2,15 +2,15 @@
 
 #' @name fm_bout_summary
 #' @title Calculate mean true speed and flight duration for each bout
-#' @description Summarises the mean true flight speed and the flight duration for each bout for the individual chamber
+#' @description Summarises the mean true flight speed and the flight duration for each bout for the individual flightmill
 #' @param df Data frame to be modified. Use the data frame created from bouts function
-#' @param ch_data The data frame for the individual chamber within the flight mill
+#' @param fm_data The data frame for the individual flightmill
 #' @param bout the vector bout created from the fm_bouts function
 #' @param fm_total_duration The total duration that the flight mill ran for. This is used to calculate the rest duration by taking away from the flight duration that is calculated
 #' @return A data frame with the bout flight parameters for the specified flight mill
 #' @export
 
-fm_bout_summary <- function(df, ch_data, bout, fm_total_duration){
+fm_bout_summary <- function(df, fm_data, bout, fm_total_duration){
   # summarising the mean total speed
     mean_speed <- df %>%
       dplyr::mutate_if(is.character, as.factor) %>%
@@ -33,17 +33,17 @@ fm_bout_summary <- function(df, ch_data, bout, fm_total_duration){
 
     # combining the data to make a proper bout summary data frame
     bout_summary <- df %>%
-      dplyr::mutate(max_speed_cms = max(ch_data$speed_cms),
+      dplyr::mutate(max_speed_cms = max(fm_data$speed_cms),
                     total_mean_speed_cms = mean_speed$mean_cms_true_bouts,
                     total_median_speed_cms = mean_speed$median_cms_true_bouts,
-                    distance_km = max(ch_data$distance_cm/100000),
+                    distance_km = max(fm_data$distance_cm/100000),
                     num_bouts = sum(df$bout == "TRUE"),
                     flight_duration_sec = flight_duration$total_flight_duration_sec)
       dplyr::group_by(bout) %>%
       base::subset(!bout %in% unique(bout[bout == FALSE])) %>%
-      dplyr::mutate(run = first(ch_data$run),
-                    chamber = first(ch_data$chamber),
-                    id = first(ch_data$id),
-                    species = first(ch_data$species))
+      dplyr::mutate(run = first(fm_data$run),
+                    flightmill = first(fm_data$flightmill),
+                    id = first(fm_data$id),
+                    species = first(fm_data$species))
     return(bout_summary)
 }

@@ -2,17 +2,17 @@
 
 #' @name fm_bouts
 #' @title Summarising number of bouts in a flight run
-#' @description The number of bouts is calculated for each flight mill chamber.
-#' @note TO DO modify this to loop through several of the flight mill chambers
+#' @description The number of bouts is calculated for each flightmill.
+#' @note TO DO modify this to loop through several of the flightmills
 #' @param df data frame input
-#' @param min_acceptable_duration The minimum acceptable duration of a stop to be considered a bout = FALSE.    Duration of flight must be more than 2.5 seconds of sustained flight
+#' @param min_acceptable_duration The minimum acceptable duration of a stop to be considered a bout = FALSE. Duration of flight must be more than 2.5 seconds of sustained flight
 #' @return A data frame with flight bout parameters calculated
 #' @export
 
 fm_bouts <- function(df, min_acceptable_duration) {
-  CHrle <- df$bout %>% rle()
-  num_groups <- length(CHrle$values)
-  group_column <- purrr::map2(seq(num_groups), CHrle$lengths, ~rep(.x, .y)) %>%
+  FMrle <- df$bout %>% rle()
+  num_groups <- length(FMrle$values)
+  group_column <- purrr::map2(seq(num_groups), FMrle$lengths, ~rep(.x, .y)) %>%
     unlist()
 
   df <- df %>%
