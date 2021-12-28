@@ -15,8 +15,8 @@ fm_bouts(df, min_acceptable_duration)
 A data frame with flight bout parameters calculated
 }
 \description{
-The number of bouts is calculated for each flightmill.
+The number of bouts is calculated for each flight mill.
 }
 \note{
-TO DO modify this to loop through several of the flightmills
+TO DO modify this to loop through several of the flight mills
 }

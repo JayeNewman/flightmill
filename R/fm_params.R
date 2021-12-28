@@ -1,7 +1,7 @@
 # Calculates speed_cms, speed_kmph, distance_cm, distance_m, and flight bouts
 #' @name fm_params
-#' @title Calculate flight flightmill parameters
-#' @description Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flightmill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
+#' @title Calculate flight flight mill parameters
+#' @description Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flight mill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and for each of the eight flight mills id is required.
 #' @param df Data frame to be modified.
 #' @param flightmill Parameter to be grouped for analysis.
 #' @param elapsed_sec Vector of the elapsed seconds parameter.
@@ -9,8 +9,8 @@
 #' @param sector_distance The part of the circumference that the insect has traveled between each sensor break.
 #' @param lowest_speed Lowest acceptable speed for a bout to become FALSE.
 #' @param min_time_interval Shortest time interval allowable between infrared breaks. This is to omit unrealistic speeds. The usual acceptable level is 0.01
-#' @param fm_duration The length of time in seconds of the flightmill run
-#' @return A data frame with flight parameters calculated from elapsed seconds and count grouped by each flight mill
+#' @param fm_duration The length of time in seconds of the flight mill run.
+#' @return A data frame is returned with flight parameters calculated from elapsed seconds and count grouped by each flight mill.
 #' @export
 
 fm_params <- function(df, flightmill, elapsed_sec, counter, sector_distance, lowest_speed, min_time_interval, fm_duration)

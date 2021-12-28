@@ -2,7 +2,7 @@
 % Please edit documentation in R/fm_params.R
 \name{fm_params}
 \alias{fm_params}
-\title{Calculate flight flightmill parameters}
+\title{Calculate flight flight mill parameters}
 \usage{
 fm_params(
   df,
@@ -30,11 +30,11 @@ fm_params(
 
 \item{min_time_interval}{Shortest time interval allowable between infrared breaks. This is to omit unrealistic speeds. The usual acceptable level is 0.01}
 
-\item{fm_duration}{The length of time in seconds of the flightmill run}
+\item{fm_duration}{The length of time in seconds of the flight mill run.}
 }
 \value{
-A data frame with flight parameters calculated from elapsed seconds and count grouped by each flight mill
+A data frame is returned with flight parameters calculated from elapsed seconds and count grouped by each flight mill.
 }
 \description{
-Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flightmill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
+Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flight mill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and for each of the eight flight mills id is required.
 }

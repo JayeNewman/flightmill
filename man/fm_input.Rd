@@ -11,13 +11,13 @@ fm_input(file_dir, file_name, sp_name)
 
 \item{file_name}{choose a file in the directory that has the run values on the first line.}
 
-\item{sp_name}{the name of the species used in the flightmill. Expects only one species.}
+\item{sp_name}{the name of the species used in the flight mill. Expects only one species.}
 }
 \value{
 A combined data frame of all the files within the directory.
 }
 \description{
-Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flightmill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
+Loads multiple files from a single directory. The files are expected to have a first cell that has the flight mill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
 }
 \details{
 Import multiple files

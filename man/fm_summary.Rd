@@ -11,7 +11,7 @@ fm_summary(bout_data, fm_data, fm_dr, fm_mean_speed, fm_total_duration)
 
 \item{fm_data}{Flight mill data to be incorporated.}
 
-\item{fm_dr}{Duration data to be included in the summary.}
+\item{fm_dr}{Duration and rest data to be included in the summary.}
 
 \item{fm_mean_speed}{Vector created from the fm_speed data frame.}
 

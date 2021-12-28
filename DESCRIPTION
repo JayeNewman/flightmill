@@ -4,11 +4,25 @@ Title: Modifies Raw Insect Flight Mill Data
 Version: 0.1.0
 Author: Jaye Newman
 Maintainer: The package maintainer <jayenewman85@gmail.com>
-Description: Modifies and calculates flight parameters obtained from an insect flight mill. Tidies data that has two columns with the collected data "elapsed time" and "count" from an insect flight mill
-License: TBA
+Description: Modifies and calculates flight parameters obtained from an insect flight mill. Tidies data that has two columns with the collected data "elapsed time" and "count" from an insect flight mill.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Import: tidyverse, tidyr, dplyr, ggplot2, janitor, readr, purrr, lubridate, fs, stringr, utils, stats, qpdf
+Imports: 
+    janitor,
+    fs,
+    utils,
+    qpdf,
+    broom,
+    dplyr,
+    stringr,
+    purrr,
+    lubridate,
+    rlang,
+    tidyr,
+    readr,
+    ggplot2
+Depends: magrittr, stats
 Export:
 RoxygenNote: 7.1.2
 Suggests: 

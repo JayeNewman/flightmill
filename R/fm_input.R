@@ -2,14 +2,16 @@
 
 #' @name fm_input
 #' @title Importing multiple files for a flight mill run
-#' @description Loads multiple files from a single directory. The files are expected to have a first cell that has the flight flightmill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
+#' @description Loads multiple files from a single directory. The files are expected to have a first cell that has the flight mill run information. This information is extracted from a selected file and new columns are created with the time information which is parsed to a POSIX format.The files are combined and tidied and extra information on species and flightmill for the eight flightmills id is required.
 #' @param file_dir locates the specified directory.
 #' @param file_name choose a file in the directory that has the run values on the first line.
-#' @param sp_name the name of the species used in the flightmill. Expects only one species.
+#' @param sp_name the name of the species used in the flight mill. Expects only one species.
+#' @importFrom magrittr %>%
+#' @importFrom stats mad median end start lag na.omit
 #' @return A combined data frame of all the files within the directory.
 #' @export
 
-# To import the id_lookup dataframe with two columns: id and flightmill which contains the unique pairings
+# To import the id_lookup dataframe with two columns: id and flight mill which contains the unique pairings
 # User will need to create a lookup table to be able to use this
 
 # An example lookup table:
@@ -29,7 +31,7 @@ fm_input <- function(file_dir, file_name, sp_name) {
   csv_files <- csv_files %>%
     purrr::map_dfr(read_csv, skip = 1, .id = "flightmill")
 
-  file_path <-  paste0(getwd(),file_dir,"/",file_name)
+  file_path <- paste0(getwd(),file_dir,"/",file_name)
 
   txt_row <- utils::read.csv(file = file_path, header = FALSE, nrows = 1)
 
@@ -61,8 +63,8 @@ fm_input <- function(file_dir, file_name, sp_name) {
     df[rowInds, "id"] <- id_lookup[i, "id"]
   }
 
-  df <- df %>%
-    rename(flightmill = flightmill)
+  # df <- df %>%
+  #   rename(flightmill = flightmill)
 
   return(df)
 }

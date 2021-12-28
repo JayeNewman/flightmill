@@ -1,14 +1,15 @@
 ---
-title: "flightmill_vignette"
+title: "flightmill vignette"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{flightmill_vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+<!-- ![](hex-image-fm.png) -->
 
-## Introduction
-**Introduction**
+## Introduction 
+Insect flight mills can measure the flight characteristics of insects. 
 
 
 ```{r, include = FALSE}
@@ -20,5 +21,17 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(flightmill)
+library(tidyverse)
+library(lubridate)
 
+file_dir <- ("/example_flightmill_raw_data")
+flightmill <- c("FLIGHTMILL1.csv")
+                #"FLIGHTMILL2.csv", "FLIGHTMILL3.csv", "FLIGHTMILL4.csv",
+             #"FLIGHTMILL5.csv", "FLIGHTMILL6.csv", "FLIGHTMILL7.csv", "FLIGHTMILL8.csv")
+
+id <- c("id1")
+        # , "id2", "id3", "id4",
+        # "id5", "id6", "id7", "id8")
+
+data <- fm_input(file_dir, flightmill, Bactrocera_tryoni)
 ```
