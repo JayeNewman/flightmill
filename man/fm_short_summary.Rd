@@ -14,8 +14,8 @@ fm_short_summary(df, bout_summary_data, duration_rest_data)
 \item{duration_rest_data}{Vector created from the rest_duration function.}
 }
 \value{
-A data frame with the bout flight parameters for the specified flight mill
+A data frame with the bout flight parameters for the specified flight mill.
 }
 \description{
-Summarises the mill data in a much shorter way
+Summarises the flight mill data.
 }
