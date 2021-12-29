@@ -33,8 +33,8 @@ fm_params <- function(df, flightmill, elapsed_sec, counter, sector_distance, low
                   time_interval > min_time_interval,
                   elapsed_sec < fm_duration)
   df <- df %>%
-    group_by(flightmill) %>%
-    slice(3:n())
+    dplyr::group_by(flightmill) %>%
+    dplyr::slice(3:n())
 
   return(df)
 }

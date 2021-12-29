@@ -9,20 +9,16 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    janitor,
     fs,
     utils,
-    qpdf,
     broom,
-    dplyr,
     stringr,
     purrr,
     lubridate,
     rlang,
-    tidyr,
     readr,
     ggplot2
-Depends: magrittr, stats
+Depends: magrittr, stats, dplyr, tidyr, janitor
 Export:
 RoxygenNote: 7.1.2
 Suggests: 

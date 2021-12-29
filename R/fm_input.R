@@ -8,6 +8,9 @@
 #' @param sp_name the name of the species used in the flight mill. Expects only one species.
 #' @importFrom magrittr %>%
 #' @importFrom stats mad median end start lag na.omit
+#' @importFrom dplyr select mutate group_by filter slice summarise rename mutate_if
+#' @importFrom tidyr spread separate
+#' @importFrom janitor clean_names
 #' @return A combined data frame of all the files within the directory.
 #' @export
 
@@ -64,7 +67,7 @@ fm_input <- function(file_dir, file_name, sp_name) {
   # }
 
   df <- df %>%
-    rename(flightmill = flightmill)
+    dplyr::rename(flightmill = flightmill)
 
   return(df)
 }

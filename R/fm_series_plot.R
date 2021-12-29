@@ -9,14 +9,14 @@
 
 fm_series_plot <- function(df, title) {
   p <- ggplot2::ggplot(df, aes(x=elapsed_sec, y=speed_cms)) +
-    geom_line(color = "grey40") +
+    ggplot2::geom_line(color = "grey40") +
     #   geom_smooth(method ,color = "orange") +
-    xlab("seconds") +
-    ylim(0,200) +
-    scale_x_continuous(limits = c(0, 3605), breaks = seq(min(0), max(3605), by = 600)) +
-    theme(axis.title = element_text(angle = 0, color = "black", size = 12)) +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    ggtitle(title) +
-    theme_classic()
+    ggplot2::xlab("seconds") +
+    ggplot2::ylim(0,200) +
+    ggplot2::scale_x_continuous(limits = c(0, 3605), breaks = seq(min(0), max(3605), by = 600)) +
+    ggplot2::theme(axis.title = element_text(angle = 0, color = "black", size = 12)) +
+    ggplot2::theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+    ggplot2::ggtitle(title) +
+    ggplot2::theme_classic()
   print(p)
 }
