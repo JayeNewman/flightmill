@@ -1,5 +1,5 @@
 ---
-title: "flightmill vignette"
+title: "flightmill_vignette"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{flightmill_vignette}
@@ -21,17 +21,20 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(flightmill)
-library(tidyverse)
-library(lubridate)
+install.packages("librarian") 
+librarian::shelf(janitor, fs, utils, broom, dplyr, stringr, purrr, lubridate, rlang, tidyr, readr, ggplot2)
 
-file_dir <- ("/example_flightmill_raw_data")
-flightmill <- c("FLIGHTMILL1.csv")
-                #"FLIGHTMILL2.csv", "FLIGHTMILL3.csv", "FLIGHTMILL4.csv",
-             #"FLIGHTMILL5.csv", "FLIGHTMILL6.csv", "FLIGHTMILL7.csv", "FLIGHTMILL8.csv")
 
-id <- c("id1")
-        # , "id2", "id3", "id4",
-        # "id5", "id6", "id7", "id8")
+file_dir <- ("/example_flightmill_raw_data/20211229")
+flightmill <- c("FLIGHTMILL1.csv", "FLIGHTMILL2.csv", "FLIGHTMILL3.csv", "FLIGHTMILL4.csv",
+             "FLIGHTMILL5.csv", "FLIGHTMILL6.csv", "FLIGHTMILL7.csv", "FLIGHTMILL8.csv")
 
-data <- fm_input(file_dir, flightmill, Bactrocera_tryoni)
+id <- c("id1", "id2", "id3", "id4",
+         "id5", "id6", "id7", "id8")
+
+data <- fm_input(file_dir, "FLIGHTMILL2.csv", "Bactrocera_tryoni")
+
+head(data)
+
+flight <- fm_params(data, flightmill, elapsed_sec, counter, 9, 15, 0.05, 3600)
 ```

@@ -44,27 +44,27 @@ fm_input <- function(file_dir, file_name, sp_name) {
                   time_series = starting_time + elapsed_sec,
                   species = sp_name)
 
-  id_lookup <- data.frame(flightmill, id, stringsAsFactors = FALSE)
+  # id_lookup <- data.frame(flightmill, id, stringsAsFactors = FALSE)
+  #
+  # n <- nrow(df)
+  #
+  # df <- cbind(df, id = rep(NA, n))
+  #
+  # #id_lookup dataframe with two columns: id and flightmill which contains the unique pairings
+  #
+  # for(i in 1:nrow(id_lookup))
+  # {
+  #   rowInds <- which(df[, "flightmill"] == id_lookup[i, "flightmill"])
+  #   if(length(rowInds) == 0)
+  #   {
+  #     #stop("One of the flightmills in the lookup does not have any corresponding rows in the dataframe.")
+  #     cat("Warning.... \n")
+  #   }
+  #   df[rowInds, "id"] <- id_lookup[i, "id"]
+  # }
 
-  n <- nrow(df)
-
-  df <- cbind(df, id = rep(NA, n))
-
-  #id_lookup dataframe with two columns: id and flightmill which contains the unique pairings
-
-  for(i in 1:nrow(id_lookup))
-  {
-    rowInds <- which(df[, "flightmill"] == id_lookup[i, "flightmill"])
-    if(length(rowInds) == 0)
-    {
-      #stop("One of the flightmills in the lookup does not have any corresponding rows in the dataframe.")
-      cat("Warning.... \n")
-    }
-    df[rowInds, "id"] <- id_lookup[i, "id"]
-  }
-
-  # df <- df %>%
-  #   rename(flightmill = flightmill)
+  df <- df %>%
+    rename(flightmill = flightmill)
 
   return(df)
 }

@@ -43,7 +43,7 @@ fm_bout_summary <- function(df, fm_data, bout, fm_total_duration){
       base::subset(!bout %in% unique(bout[bout == FALSE])) %>%
       dplyr::mutate(run = first(fm_data$run),
                     flightmill = first(fm_data$flightmill),
-                    id = first(fm_data$id),
+                    #id = first(fm_data$id),
                     species = first(fm_data$species))
     return(bout_summary)
 }

@@ -23,7 +23,7 @@ fm_summary <- function(bout_data, fm_data, fm_dr, fm_mean_speed, fm_total_durati
     dplyr::mutate(run = first(fm_data$run),
                   starting_time = first(fm_data$starting_time),
                   flightmill = first(fm_data$flightmill),
-                  id = first(fm_data$id),
+                  #id = first(fm_data$id),
                   species = first(fm_data$species))
   return(bout_data)
 }
